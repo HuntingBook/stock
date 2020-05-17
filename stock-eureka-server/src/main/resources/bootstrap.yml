@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: register-center
+server:
+  port: 1111
+  
+eureka:
+  instance:
+    prefer-ip-address: false
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 5
+    hostname: localhost
+  server:
+    enable-self-preservation: true
+    eviction-interval-timer-in-ms: 5000
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://eureka1:1112/eureka/, http://eureka2:1113/eureka/
+
+
+logging.level.com.netflix:
+  eureka: OFF
+  discovery: OFF
+
+---
+spring:
+  profiles: rc1
+
+server:
+  port: 1112
+
+eureka.instance.hostname: eureka1
+
+---
+spring:
+  profiles: rc2
+
+server:
+  port: 1113
+
+eureka.instance.hostname: eureka2
