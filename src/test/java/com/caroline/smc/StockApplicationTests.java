@@ -6,10 +6,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootTest
 class StockApplicationTests {
-
-//	@Test
-//	void contextLoads() {
-//	}
 	
 	@Test
 	public void generatePassword() {
