@@ -37,7 +37,7 @@ class UserControllerTest {
     @Autowired
     private MockRestServiceServer server;
 
-    @Test
+    /* @Test
     public void listUsers() throws Exception {
         this.mvc.perform(get("/api/users").accept(MediaType.TEXT_PLAIN))
                 .andExpect(status().isOk());
@@ -60,5 +60,5 @@ class UserControllerTest {
 //		given(this.userService.getUserById(1l)).willReturn(userOptional);
 //		this.mvc.perform(get("/api/users/1").accept(MediaType.TEXT_PLAIN)).andExpect(status().isOk());
 //				.andExpect(content().string("Honda Civic"));
-	}
+	}*/
 }
